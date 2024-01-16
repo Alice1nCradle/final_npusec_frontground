@@ -1,4 +1,5 @@
 <template>
+<div class="container">
   <div class="login">
     <h2>登录</h2>
     <form @submit.prevent="submitForm">
@@ -13,6 +14,7 @@
       <button type="submit">登录</button>
     </form>
   </div>
+</div>
 </template>
 
 <script>
@@ -41,6 +43,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: center;
 }
 .login form label {
   font-weight: bold;

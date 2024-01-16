@@ -7,4 +7,4 @@ import userRegister from "@/userRegister.vue";
 
 
 const register = createApp(userRegister)
-register.mount('#register')
+register.mount('#app')

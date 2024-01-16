@@ -5,7 +5,7 @@ let routes;
 routes = [{
     path: "/",
     name: "home",
-    component: () => import('../App.vue')
+    component: () => import('../index.vue')
     },
     {
     path: "/login",

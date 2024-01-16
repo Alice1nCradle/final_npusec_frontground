@@ -2,10 +2,10 @@ import './assets/main.css'
 import 'bootstrap-5.3.0-alpha1'
 import 'bootstrap-5.3.0-alpha1/dist/css/bootstrap.min.css'
 import { createApp } from 'vue'
-import userRegister from "@/userRegister.vue";
-import singleBlog from "@/single-blog.vue";
+import aboutPwn from "@/components/aboutPwn.vue";
+import aboutRe from "@/components/aboutRe.vue";
 
 
 
-const register = createApp(singleBlog)
-register.mount('#app')
+const re = createApp(aboutRe)
+re.mount('#app')

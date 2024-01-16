@@ -4,35 +4,21 @@ import Sidebar from "@/components/sidebar.vue";
 import BlogPost from "@/components/blogPost.vue";
 import {ref} from "vue";
 
-const webMembers = ref([
+const reMembers = ref([
   {
     id : 1,
-    name : "高思平",
+    name : "戚乐怡",
     content : "Test",
-    group:　'Web',
-    link: "/web/sipinggao"
+    group:　'Re',
+    link: "/re/leyiqi"
   },
   {
     id : 2,
-    name : "陈十",
+    name : "鲁逸晴",
     content : "test",
-    group:　'Web',
-    link: "/web/shichen"
+    group:　'Re',
+    link: "/re/yiqinglu"
   },
-  {
-    id : 3,
-    name : "郑传礼",
-    content : "test",
-    group:　'Web',
-    link: "/web/chuanlizheng"
-  },
-  {
-    id : 4,
-    name : "郑植",
-    content : "test",
-    group:　'Web',
-    link: "/web/zhizheng"
-  }
 ])
 
 </script>
@@ -44,7 +30,7 @@ const webMembers = ref([
   </div>
 
   <div class="container">
-    <blog-post v-for="member in webMembers" :key="member.id" v-bind="member"></blog-post>
+    <blog-post v-for="member in reMembers" :key="member.id" v-bind="member"></blog-post>
   </div>
 
 </template>

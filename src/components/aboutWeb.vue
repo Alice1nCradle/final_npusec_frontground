@@ -43,23 +43,33 @@ const webMembers = ref([
     <sidebar></sidebar>
   </div>
 
-  <div class="container">
+  <div class="container-fluid">
+    <h1>Web组</h1>
+    <div class="group_introduction">
+      <h2>成员</h2>
+    </div>
+
+  </div>
+
+  <div class="el-container">
     <blog-post v-for="member in webMembers" :key="member.id" v-bind="member"></blog-post>
   </div>
 
 </template>
 
 <style scoped>
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 200px);
+.el-container {
+  display:grid;
+  grid-template-columns: repeat(3, 200px);
   justify-content: center;
   grid-column-gap: 50px;
   grid-row-gap: 50px;
   margin-top: 4em;
 }
 
+.container {
 
+}
 
 ::-webkit-scrollbar{
   height: 20px;

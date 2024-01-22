@@ -1,22 +1,37 @@
 <template>
-  <div class="loginBox">
-    <h2>欢迎来到NPUSEC！</h2>
-    <form action="">
-      <div class="item">
-        <input type="text" required>
-        <label for="">username</label>
-      </div>
-      <div class="item">
-        <input type="password" required>
-        <label for="">password</label>
-      </div>
-      <button class="btn">submit
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </form>
+  <div class="bg">
+    <div class="welcome">
+      <h1>欢迎光临</h1>
+    </div>
+    <div class="login-top">
+      <h2>登录</h2>
+      <form class="form-horizontal" role="form">
+        <!--第1行：账号-->
+        <div class="form-group">
+          <label for="name" class="col-sm-3 control-label">Username：</label>
+          <div class="col-sm-8">
+            <input type="text" id="name" class="form-control" placeholder="请输入用户名">
+          </div>
+        </div>
+        <!--第2行：密码-->
+        <div class="form-group">
+          <label for="password" class="col-sm-3 control-label">Password：</label>
+          <div class="col-sm-8">
+            <input type="password" id="password" class="form-control" placeholder="请输入密码">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="forgot col-sm-offset-2 col-sm-10">
+            <input type="submit" value="Login">
+            <!--<button type="submit" class="btn btn-success">登录</button>-->
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--第2框：新用户登录框-->
+    <div class="login-bottom">
+      <h3>A new user? &nbsp;&nbsp<a href="/register">Register</a>&nbsp Here</h3>
+    </div>
   </div>
 
 </template>
@@ -25,7 +40,7 @@
 import { ref } from 'vue';
 
 export default {
-  setup() {
+ setup() {
     const username = ref('');
     const password = ref('');
     const submitForm = () => {
@@ -37,173 +52,122 @@ export default {
   },
   name: "userLogin",
 };
+
 </script>
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
+/*--2.中间登录框的大小，根据屏幕比例自适应变化--*/
+.bg {
+  width: 200%;
+  margin: 0 auto;
 }
-
-a {
-  text-decoration: none;
-}
-
-input,
-button {
-  background: transparent;
-  border: 0;
-  outline: none;
-}
-
-body {
-  height: 100vh;
-  background: linear-gradient(#141e30, #243b55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  color: #03e9f4;
-}
-
-.loginBox {
-  width: 400px;
-  height: 364px;
-  background-color: #0c1622;
-  margin: 100px auto;
-  border-radius: 10px;
-  box-shadow: 0 15px 25px 0 rgba(0, 0, 0, .6);
-  padding: 40px;
-  box-sizing: border-box;
-}
-
-h2 {
+.bg h2{
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
   text-align: center;
-  color: aliceblue;
-  margin-bottom: 30px;
-  font-family: 'Courier New', Courier, monospace;
+  margin: 0 0 50px 0;
 }
 
-.item {
-  height: 45px;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 40px;
-  position: relative;
+/*--3.登录框上半部分--*/
+.login-top {
+  background-color:#E1E1E1 ;
+  border-radius: 25px 25px 0 0;
+  padding: 40px 60px;
+  opacity:0.9;
+}
+.login-top h1 {
+  text-align: center;
+  font-size: 27px;
+  font-weight: 500;
+  color: #ADD8E6;
+  margin: 0 0 20px 0;
 }
 
-.item input {
-  width: 100%;
-  height: 100%;
+/*3.2.账户输入框的样式自定义*/
+.login-top input[type="text"] {
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #818181;
+  padding: 1px 20px;
+  background: #CACACA;
+  border: 1px solid #ccc;
+  border-radius:25px;
+  margin: 0 0 12px 0;
+  width: 88%;
+}
+
+/*3.3.密码输入框的样式自定义*/
+.login-top input[type="password"]{
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #818181;
+  padding: 1px 20px;
+  background: #CACACA;
+  border: 1px solid #ccc;
+  border-radius:25px;
+  margin: 0 0 12px 0;
+  width: 88%;
+}
+
+/*3.4.忘记密码*/
+.forgot  a{
+  font-size: 13px;
+  font-weight: 500;
+  color: #F45B4B;
+  display: inline-block;
+  border-right: 2px solid #ADD8E6;
+  padding: 0 7px 0 0;
+}
+.forgot  a:hover{
+  color: #818181;
+}
+
+.forgot input[type="submit"] {
+  background: #ADD8E6;
+  color: #FFF;
+  font-size: 17px;
+  font-weight: 400;
+  padding: 8px 7px;
+  width: 20%;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 0 7px 0 3px;
+  outline: none;
+  border: none;
+}
+.forgot input[type="submit"]:hover {
+  background:#818181;
+  transition: 0.5s all;
+}
+
+.login-bottom {
+  background: #ADD8E6;
+  padding: 20px 65px;
+  border-radius: 0 0 25px 25px;
+  text-align: right;
+  border-top: 2px solid #ADD8E6;
+}
+.login-bottom h3 {
+  font-size: 14px;
+  font-weight: 500;
   color: #fff;
-  padding-top: 20px;
-  box-sizing: border-box;
 }
-
-.item input:focus+label,
-.item input:valid+label {
-  top: 0;
-  font-size: 2px;
-}
-
-.item label {
-  position: absolute;
-  left: 0;
-  top: 12px;
-  transition: all 0.5s linear;
-}
-
-.btn {
-  padding: 10px 20px;
-  margin-top: 30px;
-  color: #03e9f4;
-  position: relative;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  left: 35%;
-}
-
-.btn:hover {
-  border-radius: 5px;
+.login-bottom h3 a {
+  font-size: 25px;
+  font-weight: 500;
   color: #fff;
-  background: #03e9f4;
-  box-shadow: 0 0 5px 0 #03e9f4,
-  0 0 25px 0 #03e9f4,
-  0 0 50px 0 #03e9f4,
-  0 0 100px 0 #03e9f4;
-  transition: all 1s linear;
+}
+.login-bottom h3 a:hover {
+  color:#696969;
+  transition: 0.5s all;/*颜色渐变效果*/
 }
 
-.btn>span {
-  position: absolute;
-}
-
-.btn>span:nth-child(1) {
-  width: 100%;
-  height: 2px;
-  background: -webkit-linear-gradient(['left', transparent,] #03e9f4);
-  left: -100%;
-  top: 0;
-  animation: line1 1s linear infinite;
-}
-
-@keyframes line1 {
-
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-.btn>span:nth-child(2) {
-  width: 2px;
-  height: 100%;
-  background: -webkit-linear-gradient(top, transparent, #03e9f4);
-  right: 0;
-  top: -100%;
-  animation: line2 1s 0.25s linear infinite;
-}
-
-@keyframes line2 {
-
-  50%,
-  100% {
-    top: 100%;
-  }
-}
-
-.btn>span:nth-child(3) {
-  width: 100%;
-  height: 2px;
-  background: -webkit-linear-gradient(left, #03e9f4, transparent);
-  left: 100%;
-  bottom: 0;
-  animation: line3 1s 0.75s linear infinite;
-}
-
-@keyframes line3 {
-
-  50%,
-  100% {
-    left: -100%;
-  }
-}
-
-.btn>span:nth-child(4) {
-  width: 2px;
-  height: 100%;
-  background: -webkit-linear-gradient(top, transparent, #03e9f4);
-  left: 0;
-  top: 100%;
-  animation: line4 1s 1s linear infinite;
-}
-
-@keyframes line4 {
-
-  50%,
-  100% {
-    top: -100%;
-  }
+.welcome {
+  justify-content: center;
 }
 
 </style>

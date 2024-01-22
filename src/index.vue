@@ -4,6 +4,7 @@ import Sidebar from "@/components/sidebar.vue";
 import {ref} from "vue";
 import MarkdownIt from "markdown-it";
 import AboutMain from "@/components/aboutMain.vue";
+
 const md = new MarkdownIt()
 const initialBlogForm = {
   name: "",
@@ -61,6 +62,18 @@ const webMembers = ref([
  <div class="container">
    <about-main></about-main>
  </div>
+
+ <div class="el-footer">
+     <p>Copyright &copy; 2024. NPUSEC All rights reserved.</p>
+ </div>
+
+<!-- music -->
+<div class=el-container>
+  <div>
+    <audio src="../NPUSEC-frontend/static/music/DSP_BGM15_Leo.ogg" autoplay loop></audio>
+  </div>
+</div>
+<!-- music -->
 </template>
 
 <style scoped>

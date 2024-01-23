@@ -1,10 +1,10 @@
 <script setup>
-import NavigateBar from "@/components/navigateBar.vue";
-import Sidebar from "@/components/sidebar.vue";
-import MarkdownIt from "markdown-it";
-import AboutMain from "@/components/aboutMain.vue";
+// import NavigateBar from "@/components/navigateBar.vue";
+// import Sidebar from "@/components/sidebar.vue";
+// import MarkdownIt from "markdown-it";
+// import AboutMain from "@/components/aboutMain.vue";
 
-const md = new MarkdownIt()
+// const md = new MarkdownIt()
 </script>
 
 <template>

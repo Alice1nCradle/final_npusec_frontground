@@ -1,9 +1,8 @@
-import './assets/main.css'
-import 'bootstrap-5.3.0-alpha1'
-import 'bootstrap-5.3.0-alpha1/dist/css/bootstrap.min.css'
 import { createApp } from 'vue'
 import aboutWeb from "@/components/aboutWeb.vue";
-
+import './static/css/style.css'
+import './static/css/plugins.css'
+import './static/css/css2.css'
 
 
 const web = createApp(aboutWeb)

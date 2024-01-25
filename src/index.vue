@@ -66,20 +66,20 @@
       <div class="nav_content">
         <div class="nav_menu">
           <ul>
-            <li class="menu-item"><a href="index.html">Home</a></li>
-            <li class="menu-item"><a href="Web.html">Web</a></li>
-            <li class="menu-item"><a href="Misc.html">Re</a></li>
-            <li class="menu-item"><a href="Pwn.html">Pwn</a></li>
+            <li class="menu-item"><a href="index.html">首页</a></li>
+            <li class="menu-item"><a href="Web.html">Web组</a></li>
+            <li class="menu-item"><a href="Misc.html">Re组</a></li>
+            <li class="menu-item"><a href="Pwn.html">Pwn组</a></li>
           </ul>
         </div>
         <div class="nav_buttons">
-          <a href="https://www.github.com/" class="NFTLeo_fn_button">
+          <a href="/login" class="NFTLeo_fn_button">
             <span class="icon"><img src="./static/picture/discord.svg" alt="" class="fn__svg"></span>
-            <span class="text">Github</span>
+            <span class="text">登录</span>
           </a>
-          <a href="https://www.git.qwq.cc/" class="NFTLeo_fn_button">
+          <a href="/register" class="NFTLeo_fn_button">
             <span class="icon"><img src="./static/picture/discord.svg" alt="" class="fn__svg"></span>
-            <span class="text">Gitlab</span>
+            <span class="text">重置</span>
           </a>
         </div>
       </div>
@@ -123,11 +123,14 @@
         <div class="bg_overlay">
 
           <!-- Overlay Color -->
-          <div class="bg_color"></div>
+          <div class="bg_color">
+          </div>
           <!-- !Overlay Color -->
 
           <!-- Overlay Image -->
-          <div class="bg_image" data-bg-img="./img/hero/bg.jpg"></div>
+          <div class="bg_image">
+            <img src="./img/hero/bg.jpg" alt="背景图">
+          </div>
           <!-- !Overlay Image -->
 
         </div>
@@ -163,7 +166,6 @@
               <img src="./static/picture/1.jpg" alt="">
             </div>
             <div class="content_item">
-
               <div class="NFTLeo_fn_title" data-align="left">
                 <h3 class="fn_title">Web</h3>
                 <div class="line"><span></span></div>
@@ -701,6 +703,32 @@
     <!-- Footer -->
     <footer id="footer">
       <div class="NFTLeo_fn_footer">
+        <!-- Footer Top -->
+        <div class="footer_top">
+          <div class="container">
+            <div class="ft_in">
+
+              <div class="desc">
+                <div class="img">
+                  <img src="./static/picture/logo.png" alt="">
+                </div>
+                <h3 class="fn_title">Join Now For Early Access</h3>
+                <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare</p>
+              </div>
+
+              <div class="subscribe_form">
+                <div class="subscribe_in">
+                  <input type="text" placeholder="Email...">
+                  <a href="#" class="NFTLeo_fn_button only_text">
+                    <span class="text">Subscribe</span>
+                  </a>
+                </div>
+                <div class="returnmessage" data-success="Your message has been received, We will contact you soon." data-message="You have subscribed to our updates. Thank you" data-invalid-email="Please enter valid email!"></div>
+                <div class="empty_notice"><span>Please enter your Email</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Footer Bottom -->
         <div class="footer_bottom">
           <div class="container">
@@ -754,29 +782,5 @@
 </template>
 
 <style scoped>
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 200px);
-  justify-content: center;
-  grid-column-gap: 50px;
-  grid-row-gap: 50px;
-  margin-top: 4em;
-}
-.container-fluid {
-  margin-top: 4em;
-}
-.fixed-bottom {
-  display: flex;
-  justify-content: right;
-}
-
-::-webkit-scrollbar{
-  height: 20px;
-  width: 20px;
-}
-
-::-webkit-scrollbar-corner {
-  background-color: transparent;
-}
 
 </style>

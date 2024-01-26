@@ -3,6 +3,8 @@ import NavigateBar from "@/components/navigateBar.vue";
 import Sidebar from "@/components/sidebar.vue";
 import BlogPost from "@/components/blogPost.vue";
 import {ref} from "vue";
+import TheFooter from "@/components/theFooter.vue";
+import MemberCard from "@/components/memberCard.vue";
 
 const webMembers = ref([
   {
@@ -42,135 +44,7 @@ const webMembers = ref([
   <div class="NFTLeo_fn_main" data-footer-sticky="">
 
 
-    <!-- Product Modal -->
-    <div class="NFTLeo_fn_modal product_modal">
-      <div class="modal_in">
-        <div class="modal_closer">
-          <a href="#">
-            <img src="../static/picture/cancel.svg" alt="" class="fn__svg">
-          </a>
-        </div>
-        <div class="modal_content">
-          <div class="NFTLeo_fn_product_modal">
-            <div class="img_item">
-              <!-- here comes product's image -->
-            </div>
-            <div class="content_item">
-              <div class="NFTLeo_fn_title" data-align="left">
-                <h3 class="fn_title"><!-- here comes product's title --></h3>
-                <div class="line"><span></span></div>
-              </div>
-
-              <div class="desc">
-                <p><!-- here comes product's description --></p>
-              </div>
-
-              <div class="buttons">
-                <a href="#" class="NFTLeo_fn_button opensea">
-                  <span class="icon"><img src="../static/picture/opensea.svg" alt="" class="fn__svg"></span>
-                  <span class="text">View on OpenSea</span>
-                </a>
-                <a href="#" class="NFTLeo_fn_button discord">
-                  <span class="icon"><img src="../static/picture/discord.svg" alt="" class="fn__svg"></span>
-                  <span class="text">View on Discord</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- !Product Modal -->
-
-    <!-- Right Navigation -->
-    <div class="nav_overlay"></div>
-    <div class="NFTLeo_fn_nav">
-      <div class="trigger is-active">
-        <div class="trigger_in">
-          <span class="text">Close</span>
-          <span class="hamb">
-					<span class="hamb_a"></span>
-					<span class="hamb_b"></span>
-					<span class="hamb_c"></span>
-				</span>
-        </div>
-      </div>
-      <div class="nav_content">
-        <div class="nav_menu">
-          <ul>
-            <li class="menu-item menu-item-has-children">
-              <a href="index.html">Home</a>
-              <ul class="sub-menu">
-                <li><a href="index.html">Home Static</a></li>
-                <li><a href="index-kenburns.html">Full Kenburns</a></li>
-                <li><a href="index-half-kenburns.html">Half Kenburns</a></li>
-                <li><a href="index-half-slider.html">Half Slider</a></li>
-              </ul>
-            </li>
-            <li class="menu-item"><a href="">About</a></li>
-            <li class="menu-item"><a href="collection.html">Collection</a></li>
-            <li class="menu-item"><a href="blog.html">Blog</a></li>
-            <li class="menu-item"><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="nav_buttons">
-          <a href="#" class="NFTLeo_fn_button">
-            <span class="icon"><img src="../static/picture/opensea.svg" alt="" class="fn__svg"></span>
-            <span class="text">OpenSea</span>
-          </a>
-          <a href="#" class="NFTLeo_fn_button">
-            <span class="icon"><img src="../static/picture/discord.svg" alt="" class="fn__svg"></span>
-            <span class="text">Discord</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Nav Footer -->
-      <div class="nav_footer">
-        <div class="nf_left">
-          <p>Copyright &copy; 2023.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-        </div>
-        <div class="nf_right">
-          <div class="NFTLeo_fn_social_list">
-            <ul>
-              <li><a href="#"><i class="fn-icon-twitter"></i></a></li>
-              <li><a href="#"><i class="fn-icon-facebook"></i></a></li>
-              <li><a href="#"><i class="fn-icon-instagram"></i></a></li>
-              <li><a href="#"><i class="fn-icon-pinterest"></i></a></li>
-              <li><a href="#"><i class="fn-icon-behance"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- !Nav Footer -->
-
-    </div>
-    <!-- !Right Navigation -->
-
-    <!-- Header -->
-    <header class="NFTLeo_fn_header">
-      <div class="container">
-        <div class="header_in">
-
-          <div class="logo">
-            <a href="index.html"><img src="../static/picture/logo.png" alt=""></a>
-          </div>
-
-          <div class="trigger">
-            <div class="trigger_in">
-              <span class="text">Menu</span>
-              <span class="hamb">
-							<span class="hamb_a"></span>
-							<span class="hamb_b"></span>
-							<span class="hamb_c"></span>
-						</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </header>
-    <!-- !Header -->
+    <navigate-bar></navigate-bar>
 
 
     <!-- Content -->
@@ -185,11 +59,11 @@ const webMembers = ref([
         </div>
         <div class="pt_content">
           <div class="container">
-            <h3 class="fn_title fn_animated_text" data-wait="1000" data-speed="8">About</h3>
+            <h3 class="fn_title fn_animated_text" data-wait="1000" data-speed="8">Web</h3>
             <p class="fn_desc">
-              <a href="index.html">Home</a>
+              <a href="index.html">首页</a>
               <span class="separator">/</span>
-              <span class="current">About</span>
+              <span class="current">Web组</span>
             </p>
           </div>
         </div>
@@ -213,19 +87,18 @@ const webMembers = ref([
               <div class="content_item">
 
                 <div class="NFTLeo_fn_title" data-align="left">
-                  <h3 class="fn_title">CREATE YOUR OWN NFT</h3>
+                  <h3 class="fn_title">Web in CTF</h3>
                   <div class="line"><span></span></div>
                 </div>
 
                 <div class="desc">
-                  <p>Multiple Chains, One Home. Stack up all your NFTs from across blockchains.The ownership of an NFT is recorded in the blockchain and can be transferred by the owner, allowing NFTs to be sold and traded.NFTs typically contain references to digital files such as photos, videos, and audio.</p>
-                  <p>NFTs can be created by anybody, and require few or no coding skills to create</p>
+                  <p>TEST.</p>
                 </div>
 
                 <div class="buttons">
                   <a href="#" class="NFTLeo_fn_button">
                     <span class="icon"><img src="../static/picture/opensea.svg" alt="" class="fn__svg"></span>
-                    <span class="text">OpenSea</span>
+                    <span class="text">Wechat</span>
                   </a>
 
                 </div>
@@ -233,6 +106,34 @@ const webMembers = ref([
               </div>
             </div>
             <!-- !About Item #1 -->
+
+            <!-- About Item #2 -->
+            <div class="NFTLeo_fn_about_item reverse">
+              <div class="img_item">
+                <img src="../static/picture/1.jpg" alt="">
+              </div>
+              <div class="content_item">
+
+                <div class="NFTLeo_fn_title" data-align="left">
+                  <h3 class="fn_title">渗透测试</h3>
+                  <div class="line"><span></span></div>
+                </div>
+
+                <div class="desc">
+                  <p>TEST.</p>
+                </div>
+
+                <div class="buttons">
+                  <a href="#" class="NFTLeo_fn_button">
+                    <span class="icon"><img src="../static/picture/opensea.svg" alt="" class="fn__svg"></span>
+                    <span class="text">Wechat</span>
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+            <!-- !About Item #2 -->
 
           </div></section>
         <!-- !Information Section -->
@@ -283,12 +184,6 @@ const webMembers = ref([
 
       <!-- Video Section -->
       <section id="video">
-
-        <!-- Dividers -->
-        <img src="../static/picture/divider.svg" alt="" class="fn__svg fn__divider top_divider">
-        <img src="../static/picture/divider.svg" alt="" class="fn__svg fn__divider bottom_divider">
-        <!-- !Dividers -->
-
         <!-- Video Shortcode -->
         <div class="NFTLeo_fn_video">
           <div class="bg_overlay">
@@ -298,10 +193,8 @@ const webMembers = ref([
           <div class="v_content">
             <div>
               <audio src="../../NPUSEC-frontend/static/music/DSP_BGM15_Leo.ogg"></audio>
-
             </div>
           </div>
-
         </div>
         <!-- !Video Shortcode -->
 
@@ -317,13 +210,13 @@ const webMembers = ref([
 
           <!-- Main Title -->
           <div class="NFTLeo_fn_title">
-            <h3 class="fn_title">Our Team Members</h3>
+            <h3 class="fn_title">成员介绍</h3>
             <div class="line"><span></span></div>
           </div>
           <!-- !Main Title -->
 
           <div class="mw_650 fn_description">
-            <p class="fn_desc fn_animated_text">We make it easy to Discover, Invest and manage all your NFTs at one place, looked up one of the more obscure.Find the right NFT collections to buy within the platform.</p>
+            <p class="fn_desc fn_animated_text">这里的人都是Web组的。</p>
           </div>
 
 
@@ -333,24 +226,7 @@ const webMembers = ref([
 
               <li class="team_item">
                 <div class="t_item">
-                  <div class="person_info">
-                    <div class="img_holder">
-                      <img src="../static/picture/111.jpg" alt="">
-                    </div>
-                    <div class="title_holder">
-                      <h3 class="fn_title">Alan Paul</h3>
-                      <p class="fn_desc">Artist</p>
-                    </div>
-                  </div>
-                  <div class="person_social">
-                    <ul>
-                      <li><a href="#"><i class="fn-icon-twitter"></i></a></li>
-                      <li><a href="#"><i class="fn-icon-facebook"></i></a></li>
-                      <li><a href="#"><i class="fn-icon-instagram"></i></a></li>
-                      <li><a href="#"><i class="fn-icon-pinterest"></i></a></li>
-                      <li><a href="#"><i class="fn-icon-behance"></i></a></li>
-                    </ul>
-                  </div>
+                  <member-card></member-card>
                 </div>
               </li>
 
@@ -488,73 +364,8 @@ const webMembers = ref([
   </div>
   <!-- Content -->
 
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="NFTLeo_fn_footer">
+<the-footer></the-footer>
 
-      <!-- Footer Top -->
-      <div class="footer_top">
-        <div class="container">
-          <div class="ft_in">
-
-            <div class="desc">
-              <div class="img">
-                <img src="../static/picture/logo.png" alt="">
-              </div>
-              <h3 class="fn_title">Join Now For Early Access</h3>
-              <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare</p>
-            </div>
-
-            <div class="subscribe_form">
-              <div class="subscribe_in">
-                <input type="text" placeholder="Email...">
-                <a href="#" class="NFTLeo_fn_button only_text">
-                  <span class="text">Subscribe</span>
-                </a>
-              </div>
-              <div class="returnmessage" data-success="Your message has been received, We will contact you soon." data-message="You have subscribed to our updates. Thank you" data-invalid-email="Please enter valid email!"></div>
-              <div class="empty_notice"><span>Please enter your Email</span></div>
-            </div>
-
-
-
-          </div>
-        </div>
-      </div>
-      <!-- !Footer Top -->
-
-      <!-- Footer Bottom -->
-      <div class="footer_bottom">
-        <div class="container">
-          <div class="fb_in">
-
-            <div class="fb_left">
-              <p>Copyright &copy; 2023.Company name All rights reserved.</p>
-            </div>
-
-            <div class="fb_right">
-              <ul>
-                <li><a href="roadmap.html">RoadMap</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <!-- !Footer Bottom -->
-
-    </div>
-  </footer>
-  <!-- !Footer -->
-
-  <!-- Totop -->
-  <a href="#" class="NFTLeo_fn_totop">
-    <span class="arrow"><img src="../static/picture/right-arr.svg" alt="" class="fn__svg"></span>
-    <span class="circle"><img src="../static/picture/circle.svg" alt="" class="fn__svg"></span>
-  </a>
-  <!-- Totop -->
 </template>
 
 <style scoped>

@@ -5,112 +5,14 @@
 // import AboutMain from "@/components/aboutMain.vue";
 
 // const md = new MarkdownIt()
+import NavigateBar from "@/components/navigateBar.vue";
+import TheFooter from "@/components/theFooter.vue";
 </script>
 
 <template>
   <div class="NFTLeo_fn_main" data-footer-sticky="">
 
-    <!-- Product Modal -->
-    <div class="NFTLeo_fn_modal product_modal">
-      <div class="modal_in">
-        <div class="modal_closer">
-          <a href="#">
-            <img src="./static/picture/cancel.svg" alt="" class="fn__svg">
-          </a>
-        </div>
-        <div class="modal_content">
-          <div class="NFTLeo_fn_product_modal">
-            <div class="img_item">
-              <!-- here comes product's image -->
-            </div>
-            <div class="content_item">
-              <div class="NFTLeo_fn_title" data-align="left">
-                <h3 class="fn_title"><!-- here comes product's title --></h3>
-                <div class="line"><span></span></div>
-              </div>
-
-              <div class="desc">
-                <p><!-- here comes product's description --></p>
-              </div>
-
-              <div class="buttons">
-                <a href="https://www.github.com" class="NFTLeo_fn_button Github">
-                  <span class="icon"><img src="./static/picture/discord.svg" alt="" class="fn__svg"></span>
-                  <span class="text">More on Github</span>
-                </a>
-                <a href="https://git.qwq.cc/" class="NFTLeo_fn_button Github">
-                  <span class="icon"><img src="./static/picture/discord.svg" alt="" class="fn__svg"></span>
-                  <span class="text">More on Gitlab</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- !Product Modal -->
-
-    <!-- Right Navigation -->
-    <div class="nav_overlay"></div>
-    <div class="NFTLeo_fn_nav">
-      <div class="trigger is-active">
-        <div class="trigger_in">
-          <span class="text">Close</span>
-          <span class="hamb">
-					<span class="hamb_a"></span>
-					<span class="hamb_b"></span>
-					<span class="hamb_c"></span>
-				</span>
-        </div>
-      </div>
-      <div class="nav_content">
-        <div class="nav_menu">
-          <ul>
-            <li class="menu-item"><a href="index.html">首页</a></li>
-            <li class="menu-item"><a href="Web.html">Web组</a></li>
-            <li class="menu-item"><a href="Misc.html">Re组</a></li>
-            <li class="menu-item"><a href="Pwn.html">Pwn组</a></li>
-          </ul>
-        </div>
-        <div class="nav_buttons">
-          <a href="/login" class="NFTLeo_fn_button">
-            <span class="icon"><img src="./static/picture/discord.svg" alt="" class="fn__svg"></span>
-            <span class="text">登录</span>
-          </a>
-          <a href="/register" class="NFTLeo_fn_button">
-            <span class="icon"><img src="./static/picture/discord.svg" alt="" class="fn__svg"></span>
-            <span class="text">重置</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-    <!-- !Right Navigation -->
-
-    <!-- Header -->
-    <header class="NFTLeo_fn_header">
-      <div class="container">
-        <div class="header_in">
-
-          <div class="logo">
-            <a href=""><img src="./static/picture/logo.png" alt=""></a>
-          </div>
-
-          <div class="trigger">
-            <div class="trigger_in">
-              <span class="text">Menu</span>
-              <span class="hamb">
-							<span class="hamb_a"></span>
-							<span class="hamb_b"></span>
-							<span class="hamb_c"></span>
-						</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </header>
-    <!-- !Header -->
+   <navigate-bar></navigate-bar>
 
 
     <!-- Content -->
@@ -700,65 +602,7 @@
     </div>
     <!-- Content -->
 
-    <!-- Footer -->
-    <footer id="footer">
-      <div class="NFTLeo_fn_footer">
-        <!-- Footer Top -->
-        <div class="footer_top">
-          <div class="container">
-            <div class="ft_in">
-
-              <div class="desc">
-                <div class="img">
-                  <img src="./static/picture/logo.png" alt="">
-                </div>
-                <h3 class="fn_title">Join Now For Early Access</h3>
-                <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est. Nam quis tempus nisl. Fusce posuere nibh a mi molestie, sit amet ornare</p>
-              </div>
-
-              <div class="subscribe_form">
-                <div class="subscribe_in">
-                  <input type="text" placeholder="Email...">
-                  <a href="#" class="NFTLeo_fn_button only_text">
-                    <span class="text">Subscribe</span>
-                  </a>
-                </div>
-                <div class="returnmessage" data-success="Your message has been received, We will contact you soon." data-message="You have subscribed to our updates. Thank you" data-invalid-email="Please enter valid email!"></div>
-                <div class="empty_notice"><span>Please enter your Email</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Footer Bottom -->
-        <div class="footer_bottom">
-          <div class="container">
-            <div class="fb_in">
-
-              <div class="fb_in">
-                <p>Copyright &copy; 2024. NPUSEC All rights reserved.</p>
-              </div>
-
-              <div class="fb_right">
-                <ul>
-                  <li><a href="roadmap.html">路线图</a></li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <!-- !Footer Bottom -->
-
-      </div>
-    </footer>
-    <!-- !Footer -->
-
-    <!-- To top -->
-    <a href="#" class="NFTLeo_fn_totop">
-      <span class="arrow"><img src="./static/picture/right-arr.svg" alt="" class="fn__svg"></span>
-      <span class="circle"><img src="./static/picture/circle.svg" alt="" class="fn__svg"></span>
-    </a>
-    <!-- !To top -->
+    <the-footer></the-footer>
     <!-- Video Shortcode -->
     <div class="NFTLeo_fn_video">
       <div class="bg_overlay">

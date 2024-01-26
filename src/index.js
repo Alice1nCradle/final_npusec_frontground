@@ -6,6 +6,7 @@ import './static/css/plugins.css'
 import './static/css/css2.css'
 
 
+
 const app = createApp(App)
 app.use(router)
 app.mount('#app')

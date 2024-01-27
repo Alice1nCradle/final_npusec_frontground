@@ -1,7 +1,6 @@
 <script setup>
-
-import TheFooter from "@/components/aboutWeb.vue";
-import NavigateBar from "@/components/aboutRe.vue";
+import TheFooter from "@/components/theFooter.vue";
+import NavigateBar from "@/components/navigateBar.vue";
 </script>
 
 <template>
@@ -23,11 +22,11 @@ import NavigateBar from "@/components/aboutRe.vue";
         </div>
         <div class="pt_content">
           <div class="container">
-            <h3 class="fn_title fn_animated_text" data-wait="1000" data-speed="8">Blog</h3>
+            <h3 class="fn_title fn_animated_text" data-wait="1000" data-speed="8">Blogs</h3>
             <p class="fn_desc">
-              <a href="index.html">Home</a>
+              <a href="index.html">首页</a>
               <span class="separator">/</span>
-              <span class="current">Blog</span>
+              <span class="current">Blogs</span>
             </p>
           </div>
         </div>

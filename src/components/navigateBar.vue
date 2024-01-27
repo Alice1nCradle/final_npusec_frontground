@@ -73,7 +73,7 @@ function search()
               <li class="menu-item"><a href="pwn.html">Pwn组</a></li>
             </ul>
           </li>
-          <li class="menu-item"><a href="blog.html">其他</a></li>
+          <li class="menu-item"><a href="blog.html">博客文章</a></li>
         </ul>
       </div>
       <div class="nav_buttons">

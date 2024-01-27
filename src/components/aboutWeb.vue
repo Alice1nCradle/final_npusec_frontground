@@ -180,29 +180,6 @@ const webMembers = ref([
           </div>
         </section></div>
 
-
-
-      <!-- Video Section -->
-      <section id="video">
-        <!-- Video Shortcode -->
-        <div class="NFTLeo_fn_video">
-          <div class="bg_overlay">
-            <div class="bg_image" data-bg-img="img/hero/bg.jpg"></div>
-            <div class="bg_color"></div>
-          </div>
-          <div class="v_content">
-            <div>
-              <audio src="../../NPUSEC-frontend/static/music/DSP_BGM15_Leo.ogg"></audio>
-            </div>
-          </div>
-        </div>
-        <!-- !Video Shortcode -->
-
-
-      </section>
-      <!-- !Video Section -->
-
-
       <!-- Team Section -->
       <section id="team">
 
@@ -225,7 +202,7 @@ const webMembers = ref([
             <ul class="team_list">
 
               <li class="team_item">
-                <div class="t_item">
+                <div class="t_item" v-for="member in webMembers" :key="member.id">
                   <member-card></member-card>
                 </div>
               </li>
@@ -365,6 +342,25 @@ const webMembers = ref([
   <!-- Content -->
 
 <the-footer></the-footer>
+  <!-- Video Section -->
+  <section id="video">
+    <!-- Video Shortcode -->
+    <div class="NFTLeo_fn_video">
+      <div class="bg_overlay">
+        <div class="bg_image" data-bg-img="img/hero/bg.jpg"></div>
+        <div class="bg_color"></div>
+      </div>
+      <div class="v_content">
+        <div>
+          <audio src="../../NPUSEC-frontend/static/music/DSP_BGM15_Leo.ogg"></audio>
+        </div>
+      </div>
+    </div>
+    <!-- !Video Shortcode -->
+
+
+  </section>
+  <!-- !Video Section -->
 
 </template>
 

@@ -1,5 +1,36 @@
 <script setup>
-
+import {ref} from "vue";
+defineProps(['id', 'name', 'content', 'group', 'link'])
+const webMembers = ref([
+  {
+    id : 1,
+    name : "高思平",
+    content : "Test",
+    group:　'Web',
+    link: "/web/sipinggao"
+  },
+  {
+    id : 2,
+    name : "陈十",
+    content : "test",
+    group:　'Web',
+    link: "/web/shichen"
+  },
+  {
+    id : 3,
+    name : "郑传礼",
+    content : "test",
+    group:　'Web',
+    link: "/web/chuanlizheng"
+  },
+  {
+    id : 4,
+    name : "郑植",
+    content : "test",
+    group:　'Web',
+    link: "/web/zhizheng"
+  }
+])
 </script>
 
 <template>

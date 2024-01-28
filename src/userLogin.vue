@@ -1,45 +1,55 @@
 <template>
-  <div class="bg">
-    <div class="welcome">
-      <h1>欢迎光临</h1>
-    </div>
-    <div class="login-top">
-      <h2>登录</h2>
-      <form class="form-horizontal" role="form">
-        <!--第1行：账号-->
-        <div class="form-group">
-          <label for="name" class="col-sm-3 control-label">Username：</label>
-          <div class="col-sm-8">
-            <input type="text" id="name" class="form-control" placeholder="请输入用户名">
+  <!-- Main -->
+  <div class="NFTLeo_fn_main" data-footer-sticky="">
+    <navigate-bar></navigate-bar>
+    <div class="bg">
+      <div class="welcome">
+        <h1>欢迎光临</h1>
+      </div>
+      <div class="login-top">
+        <h2>登录</h2>
+        <form class="form-horizontal" role="form">
+          <!--第1行：账号-->
+          <div class="form-group">
+            <label for="name" class="col-sm-3 control-label">Username：</label>
+            <div class="col-sm-8">
+              <input type="text" id="name" class="form-control" placeholder="请输入用户名">
+            </div>
           </div>
-        </div>
-        <!--第2行：密码-->
-        <div class="form-group">
-          <label for="password" class="col-sm-3 control-label">Password：</label>
-          <div class="col-sm-8">
-            <input type="password" id="password" class="form-control" placeholder="请输入密码">
+          <!--第2行：密码-->
+          <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password：</label>
+            <div class="col-sm-8">
+              <input type="password" id="password" class="form-control" placeholder="请输入密码">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="forgot col-sm-offset-2 col-sm-10">
-            <input type="submit" value="Login">
-            <!--<button type="submit" class="btn btn-success">登录</button>-->
+          <div class="form-group">
+            <div class="forgot col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Login">
+              <!--<button type="submit" class="btn btn-success">登录</button>-->
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
-    <!--第2框：新用户登录框-->
-    <div class="login-bottom">
-      <h3>A new user? &nbsp;&nbsp<a href="/register">Register</a>&nbsp Here</h3>
+        </form>
+      </div>
+      <!--第2框：新用户登录框-->
+      <div class="login-bottom">
+        <h3>A new user? &nbsp;&nbsp<a href="/register">Register</a>&nbsp Here</h3>
+      </div>
     </div>
   </div>
+
+  <the-footer></the-footer>
+
 
 </template>
 
 <script>
 import { ref } from 'vue';
+import NavigateBar from "@/components/navigateBar.vue";
+import TheFooter from "@/components/theFooter.vue";
 
 export default {
+  components: {TheFooter, NavigateBar},
  setup() {
     const username = ref('');
     const password = ref('');

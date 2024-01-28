@@ -8,7 +8,7 @@ import MemberCard from "@/components/memberCard.vue";
 
 function clickMember(link)
 {
-  window.location.href(link);
+  window.href(link);
 }
 
 </script>

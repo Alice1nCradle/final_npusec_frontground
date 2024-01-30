@@ -1,3 +1,19 @@
+<script>
+import TheFooter from "@/components/theFooter.vue";
+import {defineComponent, ref} from "vue";
+import NavigateBar from "@/components/navigateBar.vue";
+import axios from "axios";
+
+export default defineComponent({
+  components: {TheFooter, NavigateBar},
+
+})
+
+
+</script>
+
+
+
 <template>
   <!-- Main -->
   <div class="NFTLeo_fn_main" data-footer-sticky="">
@@ -37,33 +53,12 @@
       </div>
     </div>
   </div>
-
   <the-footer></the-footer>
 
 
 </template>
 
-<script>
-import { ref } from 'vue';
-import NavigateBar from "@/components/navigateBar.vue";
-import TheFooter from "@/components/theFooter.vue";
 
-export default {
-  components: {TheFooter, NavigateBar},
- setup() {
-    const username = ref('');
-    const password = ref('');
-    const submitForm = () => {
-      // 在这里处理登录逻辑，例如发送请求到后端验证用户名和密码
-      console.log(`用户名: ${username.value}, 密码: ${password.value}`);
-    };
-
-    return { username, password, submitForm };
-  },
-  name: "userLogin",
-};
-
-</script>
 
 <style scoped>
 /*--2.中间登录框的大小，根据屏幕比例自适应变化--*/

@@ -4,7 +4,8 @@ import Sidebar from "@/components/sidebar.vue";
 import BlogPost from "@/components/blogPost.vue";
 import {ref} from "vue";
 import TheFooter from "@/components/theFooter.vue";
-import MemberCard from "@/components/memberCard.vue";
+import MemberCard from "@/components/memberCardWeb.vue";
+import MemberCardWeb from "@/components/memberCardWeb.vue";
 
 function clickMember(link)
 {
@@ -117,7 +118,7 @@ function clickMember(link)
           <div class="container">
             <!-- Guarantee List -->
             <div class="NFTLeo_fn_title">
-              <h3 class="fn_title">Our Strengths</h3>
+              <h3 class="fn_title">Resource</h3>
               <div class="line"><span></span></div>
             </div>
 
@@ -127,16 +128,16 @@ function clickMember(link)
                   <div class="item">
                     <span class="line"></span>
                     <img src="../static/picture/search-engine.svg" alt="" class="fn__svg">
-                    <h3 class="fn_title">High Quality</h3>
-                    <p class="fn_desc fn_animated_text">We have entrance examination.</p>
+                    <h3 class="fn_title">CTF training</h3>
+                    <p class="fn_desc fn_animated_text">CTFshow……</p>
                   </div>
                 </li>
                 <li>
                   <div class="item">
                     <span class="line"></span>
                     <img src="../static/picture/management.svg" alt="" class="fn__svg">
-                    <h3 class="fn_title">Top Resources</h3>
-                    <p class="fn_desc fn_animated_text">School of CyberSecurity is very rich.</p>
+                    <h3 class="fn_title">Money</h3>
+                    <p class="fn_desc fn_animated_text">????</p>
                   </div>
                 </li>
                 <li>
@@ -144,7 +145,7 @@ function clickMember(link)
                     <span class="line"></span>
                     <img src="../static/picture/padlock.svg" alt="" class="fn__svg">
                     <h3 class="fn_title">Secured & Trusted</h3>
-                    <p class="fn_desc fn_animated_text">We are high levels.</p>
+                    <p class="fn_desc fn_animated_text">We developed tools and then participate in competitions.</p>
                   </div>
                 </li>
               </ul>
@@ -165,16 +166,12 @@ function clickMember(link)
             <div class="line"><span></span></div>
           </div>
           <!-- !Main Title -->
-
-          <div class="mw_650 fn_description">
-            <p class="fn_desc fn_animated_text">这里的人都是Web组的。</p>
-          </div>
-
+          
 
           <!-- Team List Shortcode -->
           <div class="NFTLeo_fn_team">
             <ul class="team_list">
-              <member-card></member-card>
+              <member-card-web></member-card-web>
             </ul>
           </div>
           <!-- !Team List Shortcode -->

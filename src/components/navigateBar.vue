@@ -83,7 +83,7 @@ function search()
         </a>
         <a href="/register" class="NFTLeo_fn_button">
           <span class="icon"><img src="../static/picture/discord.svg" alt="" class="fn__svg"></span>
-          <span class="text">重置</span>
+          <span class="text">注册</span>
         </a>
       </div>
     </div>

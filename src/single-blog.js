@@ -6,5 +6,5 @@ import singleBlog from "@/single-blog.vue";
 
 
 
-const register = createApp(singleBlog)
-register.mount('#app')
+const single_blog = createApp(singleBlog)
+single_blog.mount('#app')

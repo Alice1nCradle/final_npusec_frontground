@@ -2,6 +2,36 @@
 
 import TheFooter from "@/components/theFooter.vue";
 import NavigateBar from "@/components/navigateBar.vue";
+import {ref} from "vue";
+import CategoriesWeb from "@/components/CategoriesWeb.vue";
+import AuthorCard from "@/components/AuthorCard.vue";
+import Comment from "@/components/Comment.vue";
+import NearSearchMap from "@/components/NearSearchMap.vue";
+// import axios from "axios";
+
+const blog_data = ref(
+  {
+    author: '陈十',
+    title: '我们将走向何方',
+    time: 20240207,
+    content: '',
+    group: 'Web组'
+  }
+)
+/*
+axios: ({
+  methods: 'post',
+  url: '/api/blogData',
+  data: {
+    author: '',
+    title: '',
+    time: '',
+    content: '',
+    group: ''
+  }
+})
+
+ */
 </script>
 
 <template>
@@ -37,9 +67,9 @@ import NavigateBar from "@/components/navigateBar.vue";
               <p>
                 <a href="index.html">首页</a>
                 <span class="separator">/</span>
-                <a href="blog.html">博客主页</a>
+                <a href="blog.html">Blog</a>
                 <span class="separator">/</span>
-                <span class="current">Web组</span>
+                <span class="current">  {{ blog_data.group }}</span>
               </p>
             </div>
 
@@ -59,7 +89,7 @@ import NavigateBar from "@/components/navigateBar.vue";
 
                 <!-- Single Title -->
                 <div class="single_title">
-                  <h2 class="fn_title">我们将走向何方？</h2>
+                  <h2 class="fn_title">{{ blog_data.title }}</h2>
 
                 </div>
                 <!-- !Single Title -->
@@ -67,10 +97,10 @@ import NavigateBar from "@/components/navigateBar.vue";
                 <!-- Mini Items  -->
                 <div class="NFTLeo_fn_minis">
                   <div class="m_item">
-                    <a href="/blogs/20240401">April 01, 2024</a>
+                    <a>{{ blog_data.time }}</a>
                   </div>
                   <div class="m_item">
-                    <span>By <a href="/web/shichen">陈十</a></span>
+                    <span>By <a href="/web/shichen">{{ blog_data.author }}</a></span>
                   </div>
                   <div class="m_item">
                     <a>4 Comments</a>
@@ -85,21 +115,8 @@ import NavigateBar from "@/components/navigateBar.vue";
                 <!-- !Single Description -->
 
                 <!-- Author Information Box -->
-                <div class="NFTLeo_fn_author_info">
-                  <div class="info_img">
-                    <img src="/src/static/picture/61.jpg" alt="">
-                  </div>
-                  <div class="info_desc">
-                    <h3 class="fn_title">陈十</h3>
-                    <p class="fn_desc">我所热爱的，便是我的生活。</p>
-                    <ul class="social">
-                      <li><a href="#"><i class="fn-icon-wechat"></i></a></li>
-                      <li><a href="#"><i class="fn-icon-github"></i></a></li>
-                      <li><a href="#"><i class="fn-icon-rss"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- !Author Information Box -->
+                <author-card></author-card>
+                <!-- Author Information Box -->
 
 
               </div>
@@ -122,46 +139,7 @@ import NavigateBar from "@/components/navigateBar.vue";
           </div>
 
           <!-- Previous & Next Box -->
-          <div class="NFTLeo_fn_pnb">
-            <div class="container">
-              <div class="pnb_wrapper">
-
-                <div class="prev item">
-                  <a href="#" class="full_link"></a>
-                  <div class="item_in">
-                    <div class="img" data-bg-img="img/blog/1.jpg"></div>
-                    <div class="desc">
-                      <p class="fn_desc">上一篇文章</p>
-                      <h3 class="fn_title">全力以赴！</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="trigger">
-                  <a href="blog.html" class="full_link"></a>
-                  <div class="icon">
-                    <span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span>
-                  </div>
-                </div>
-
-                <div class="next item">
-                  <a href="#" class="full_link"></a>
-                  <div class="item_in">
-                    <div class="img" data-bg-img="img/blog/3.jpg"></div>
-                    <div class="desc">
-                      <p class="fn_desc">下一篇文章</p>
-                      <h3 class="fn_title">
-                        为美好的网络安全事业献上祝福！</h3>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
+          <near-search-map></near-search-map>
           <!-- !Previous & Next Box -->
 
 
@@ -174,117 +152,7 @@ import NavigateBar from "@/components/navigateBar.vue";
               <div class="sidebar_left">
 
                 <!-- Comments -->
-                <div class="NFTLeo_fn_comments">
-
-                  <div class="comment-title">
-                    <h3 class="fn_title">3 Comments</h3>
-                  </div>
-
-                  <div class="comment-list">
-                    <ul class="list">
-                      <li class="comment">
-                        <div class="comment-body">
-                          <div class="comment-avatar">
-                            <img src="/src/static/picture/comment-author1.jpg" alt="">
-                          </div>
-                          <div class="comment-text-wrap">
-                            <div class="comment-data">
-                              <h3 class="author">Mion</h3>
-                              <p class="date">April 9, 2023 at 9:03 pm</p>
-                            </div>
-                            <div class="comment-text">
-                              <div class="desc">
-                                <p>迎面起来的你让我如此蠢蠢欲动。</p>
-                              </div>
-                              <div class="fn_reply">
-                                <a href="#" class="reply">
-
-                                  <span>回复</span>
-                                </a>
-                                <a href="#" class="edit">编辑</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="comment">
-                        <div class="comment-body">
-                          <div class="comment-avatar">
-                            <img src="/src/static/picture/comment-author2.jpg" alt="">
-                          </div>
-                          <div class="comment-text-wrap">
-                            <div class="comment-data">
-                              <h3 class="author">陈驰</h3>
-                              <p class="date">May 9, 2023 at 9:03 pm</p>
-                            </div>
-                            <div class="comment-text">
-                              <div class="desc">
-                                <p>狗熊岭仙人</p>
-                              </div>
-                              <div class="fn_reply">
-                                <a href="#" class="reply">
-
-                                  <span>回复</span>
-                                </a>
-                                <a href="#" class="edit">编辑</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="comment">
-                        <div class="comment-body">
-                          <div class="comment-avatar">
-                            <img src="/src/static/picture/comment-author3.jpg" alt="">
-                          </div>
-                          <div class="comment-text-wrap">
-                            <div class="comment-data">
-                              <h3 class="author">陈十</h3>
-                              <p class="date">May 9, 2023 at 9:03 pm</p>
-                            </div>
-                            <div class="comment-text">
-                              <div class="desc">
-                                <p>all of these bullshit are fake news.</p>
-                              </div>
-                              <div class="fn_reply">
-                                <a href="#" class="reply">
-
-                                  <span>回复</span>
-                                </a>
-                                <a href="#" class="edit">编辑</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="comment-respond">
-                    <div class="respond-title">
-                      <h3 class="fn_title">评论 (支持Markdown)</h3>
-                    </div>
-                    <div class="respond-log">
-                      <p><a href="/login.html">登录</a>
-                        <a href="/register.html">注册</a>
-                      </p>
-                    </div>
-                    <form class="comment-form">
-                      <ul class="input-items">
-                        <li class="input-item">
-                          <div class="input_item">
-                            <textarea name="comment" placeholder="下方查看Markdown渲染结果"></textarea>
-                          </div>
-                        </li>
-                      </ul>
-                      <div class="clearfix"></div>
-                      <a href="#" class="NFTLeo_fn_button only_text">
-                        <span class="text">发表评论</span>
-                      </a>
-                    </form>
-                  </div>
-
-                </div>
+                <comment></comment>
                 <!-- Comments -->
 
               </div>
@@ -296,7 +164,7 @@ import NavigateBar from "@/components/navigateBar.vue";
                 <!-- Widget (Top Articles) -->
                 <div class="widget widget-articles">
                   <div class="wid-title">
-                    <span class="text">其他热门文章</span>
+                    <span class="text">{{ blog_data.group }}其他热门文章</span>
                     <span class="icon"></span>
                   </div>
 
@@ -334,28 +202,9 @@ import NavigateBar from "@/components/navigateBar.vue";
                 </div>
                 <!-- !Widget (Top Articles) -->
 
-                <!-- Widget (Custom Categories) -->
-                <div class="widget widget-custom-categories">
-                  <div class="wid-title">
-                    <span class="text">Categories</span>
-                    <span class="icon"></span>
-                  </div>
-                  <div class="NFTLeo_fn_categories" data-more="Show More" data-less="Show Less" data-count="4">
-                    <ul>
-                      <li><a href="#">命令执行</a><span class="count">77</span></li>
-                      <li><a href="#">爆破</a><span class="count">48</span></li>
-                      <li><a href="#">XSS</a><span class="count">31</span></li>
-                      <li><a href="#">反序列化</a><span class="count">29</span></li>
-                      <li><a href="#">Java</a><span class="count">33</span></li>
-                      <li><a href="#">SQL注入</a><span class="count">24</span></li>
-                      <li><a href="#">文件包含</a><span class="count">53</span></li>
-                      <li><a href="#">文件上传</a><span class="count">42</span></li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
                 <!-- !Widget (Custom Categories) -->
-
+                <categories-web></categories-web>
+                <!-- !Widget (Custom Categories) -->
               </div>
               <!-- !Right Sidebar -->
 

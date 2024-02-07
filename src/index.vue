@@ -5,12 +5,13 @@
 // import AboutMain from "@/components/aboutMain.vue";
 
 // const md = new MarkdownIt()
+const isLogin = 'true';
 import NavigateBar from "@/components/navigateBar.vue";
 import TheFooter from "@/components/theFooter.vue";
 </script>
 
 <template>
-  <div class="NFTLeo_fn_main" data-footer-sticky="">
+  <div class="NFTLeo_fn_main" data-footer-sticky="" v-if="isLogin === 'true'">
 
    <navigate-bar></navigate-bar>
 

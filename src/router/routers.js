@@ -1,27 +1,69 @@
 import {createRouter, createWebHashHistory} from "vue-router";
+import App from "@/index.vue";
+import userLogin from "@/userLogin.vue";
 
 
-let routes;
-routes = [{
-    path: "/",
-    name: "home",
-    component: () => import('../index.vue')
+const routes = [
+    {
+        path:'/',
+        redirect: {
+            name: "home"
+        }
     },
     {
-    path: "/login",
-    name: "login",
-    component:  () => import('../userLogin.vue')
+        path:'/home',
+        component: App,
+        name: App
     },
     {
-    path: "/register",
-    name: "register",
-    component: () => import('../userRegister.vue')
+        path: '/login',
+        name: 'login',
+        component: userLogin
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: () =>
+            import("/src/userRegister.vue")
     }
-    ];
+]
 
-const router = createRouter({
-    history: createWebHashHistory(),
-    routes
+const router = createRouter(
+    {
+        history: createWebHashHistory(),
+        routes
+    }
+)
+
+router.beforeEach((to, from, next) =>
+{
+    if(to.path === '/login')
+    {
+        next();
+        console.log(localStorage.s);
+    }
+    else if(to.path === '/register')
+    {
+        next();
+    }
+    else
+    {
+        if(from.path === '/login')
+        {
+            next();
+        }
+        else {
+            if(localStorage.s === 'true')
+            {
+                next();
+                console.log(localStorage['s']);
+            }
+            else {
+                next('/login');
+                console.log('Please login first!');
+            }
+        }
+    }
 })
 
 export default router

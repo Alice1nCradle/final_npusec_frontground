@@ -7,11 +7,11 @@ const routes = [
     {
         path:'/',
         redirect: {
-            name: "home"
+            name: "index"
         }
     },
     {
-        path:'/home',
+        path:'/index',
         component: App,
         name: App
     },

@@ -90,7 +90,7 @@ axios: ({
         <ul class="input-items">
           <li class="input-item">
             <div class="input_item">
-              <textarea name="comment" placeholder="下方查看Markdown渲染结果"></textarea>
+              <textarea name="comment" placeholder="请在此处输入"></textarea>
             </div>
           </li>
         </ul>

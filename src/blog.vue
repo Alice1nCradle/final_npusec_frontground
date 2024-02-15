@@ -48,11 +48,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>Jan 01, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Let's Drive Into The World of NFT With NFTLeo</a>
+                    <a href="single-blog.html">Let's Drive Into The World of NFT With NFTLeo</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -65,11 +65,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>May 5, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Top Ways to Make Money with NFTs in 2023 You Must Try</a>
+                    <a href="single-blog.html">Top Ways to Make Money with NFTs in 2023 You Must Try</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -82,11 +82,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>May 13, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Crypto-Focused Silvergate Jumps on Blowout Earnings Report</a>
+                    <a href="single-blog.html">Crypto-Focused Silvergate Jumps on Blowout Earnings Report</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -99,11 +99,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>May 08, 2022</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">5 Reasons You Should Own Digital Collectibles</a>
+                    <a href="single-blog.html">5 Reasons You Should Own Digital Collectibles</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -116,11 +116,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>May 19, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">5 Reasons the Metaverse Will Go Crazy in the Next Year</a>
+                    <a href="single-blog.html">5 Reasons the Metaverse Will Go Crazy in the Next Year</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -133,11 +133,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>April 12, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Crypto-Focused Silvergate Jumps on Blowout Earnings Report</a>
+                    <a href="single-blog.html">Crypto-Focused Silvergate Jumps on Blowout Earnings Report</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -150,11 +150,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>April 07, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">5 Reasons the Metaverse Will Go Crazy in the Next Year</a>
+                    <a href="single-blog.html">5 Reasons the Metaverse Will Go Crazy in the Next Year</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -167,11 +167,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>April 03, 2022</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">10 Ways NFT Wallet Will be Used in the Future</a>
+                    <a href="single-blog.html">10 Ways NFT Wallet Will be Used in the Future</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -184,11 +184,11 @@ import NavigateBar from "@/components/navigateBar.vue";
                     <span>March 15, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Crypto-Focused Silvergate Jumps on Blowout Earnings Report</a>
+                    <a href="single-blog.html">Crypto-Focused Silvergate Jumps on Blowout Earnings Report</a>
                   </h3>
                   <p class="fn_desc">Morbi non dignissim erat, a blandit felis nec lorem vel orci varius congue ut vitae est.</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>

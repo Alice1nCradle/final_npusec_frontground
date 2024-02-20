@@ -2,6 +2,8 @@
 import TheFooter from "@/components/theFooter.vue";
 import {ref} from "vue";
 import NavigateBar from "@/components/navigateBar.vue";
+import axios from "axios";
+import ValidCode from "@/components/ValidCode.vue";
 
 export default {
   data() {
@@ -38,47 +40,21 @@ export default {
 
     }
   },
-    /*
-    login()
-    {
-      const {username, password} = this;
-      if(username === 'admin' && password === "123456")
-      {
-        alert("Welcome to NPUSEC, " + username);
-        window.location.href = 'index.html';
-      }
-      else if(username.length === 0 || password.length === 0)
-      {
-        alert("Please type in your username and password!")
-      }
-      else
-      {
-        alert("Invalid login request!");
-      }
-    }
+  createUser()
+  {
+    let username = ref();
+    let password_1 = ref();
+    let password_2 = ref();
+    axios.post('/api/create_user', { username: username, password_1: password_1, password_2: password_2 })
+        .then(response => {
+          console.log(response.data)
+        })
+        .catch(error => {
+          console.error(error);
+        });
   },
+  components:{ValidCode, NavigateBar, TheFooter},
 
-     */
-  components:{NavigateBar, TheFooter},
-  /*
-  axios:({
-    methods: "post",
-    url: "/api/getUserData",
-    data: {
-      username: ref(''),
-      password: ref('')
-    }
-  })
-      .then(function (response) {
-        alert("Success!");
-        this.location.href("/login-success.html");
-      })
-      .catch(function (error) {
-        alert("Invalid login request!");
-        this.location.href("/login-error.html");
-      })
-      //有后端再用
-   */
 }
 
 
@@ -124,6 +100,7 @@ export default {
                       <input type="password" v-model="password_2" class="form-control" placeholder="Password again">
                     </div>
                   </div>
+                  <valid-code></valid-code>
                   <div class="form-group">
                     <div class="forgot col-sm-offset-2 col-sm-10">
                       <input type="submit" value="Register" @click.prevent="register">

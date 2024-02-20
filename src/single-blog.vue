@@ -7,7 +7,7 @@ import CategoriesWeb from "@/components/CategoriesWeb.vue";
 import AuthorCard from "@/components/AuthorCard.vue";
 import Comment from "@/components/Comment.vue";
 import NearSearchMap from "@/components/NearSearchMap.vue";
-// import axios from "axios";
+import axios from "axios";
 
 const blog_data = ref(
   {
@@ -18,20 +18,25 @@ const blog_data = ref(
     group: 'Web组'
   }
 )
-/*
-axios: ({
-  methods: 'post',
-  url: '/api/blogData',
-  data: {
-    author: '',
-    title: '',
-    time: '',
-    content: '',
-    group: ''
-  }
-})
 
- */
+function fetchBlogData()
+{
+  let author = ref();
+  let title = ref();
+  let time = ref();
+  let content = ref();
+  let group = ref();
+  axios.post("/api/blog_data", { author:author, title:title, time:time, content:content, group:group })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      })
+}
+
+
+
 </script>
 
 <template>

@@ -1,8 +1,25 @@
 <script setup>
+import axios from "axios"
+import {ref} from "vue";
 function search()
 {
   const keyword = document.getElementById("searchBox").value;
   alert("正在搜索：" + keyword)
+}
+const username = "admin";
+function fetchUserName()
+{
+  let username = ref();
+  axios.post("/api/get_user",
+      {
+        username: username
+      })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      })
 }
 </script>
 
@@ -110,8 +127,8 @@ function search()
     <div class="container">
       <div class="header_in">
 
-        <div class="logo">
-          <a href=""><img src="../static/picture/logo.png" alt=""></a>
+        <div class="fn_title">
+          <p class="fn_desc fn_animated_text">Hello, {{ username }}</p>
         </div>
 
         <div class="trigger">

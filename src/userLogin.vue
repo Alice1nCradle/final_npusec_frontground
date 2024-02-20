@@ -3,6 +3,7 @@ import TheFooter from "@/components/theFooter.vue";
 import {ref} from "vue";
 import NavigateBar from "@/components/navigateBar.vue";
 import axios from "axios";
+import ValidCode from "@/components/ValidCode.vue";
 
 export default {
   data() {
@@ -30,26 +31,18 @@ export default {
       }
     }
   },
-  components:{NavigateBar, TheFooter},
-  /*
-  axios:({
-    methods: "post",
-    url: "/api/getUserData",
-    data: {
-      username: ref(''),
-      password: ref('')
-    }
-  })
-      .then(function (response) {
-        alert("Success!");
-        this.location.href("/login-success.html");
-      })
-      .catch(function (error) {
-        alert("Invalid login request!");
-        this.location.href("/login-error.html");
-      })
-      //有后端再用
-   */
+  loginCheck()
+  {
+    axios.post('/api/login_check', { username: ref(), password: ref() })
+        .then(response => {
+          console.log(response.data)
+        })
+        .catch(error => {
+          console.error(error);
+        });
+  },
+  components:{ValidCode, NavigateBar, TheFooter},
+
 }
 
 
@@ -89,6 +82,7 @@ export default {
                       <input type="password" v-model="password" class="form-control" placeholder="Password">
                     </div>
                   </div>
+                  <valid-code></valid-code>
                   <div class="form-group">
                     <div class="forgot col-sm-offset-2 col-sm-10">
                       <input type="submit" value="Login" @click.prevent="login">

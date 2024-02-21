@@ -42,6 +42,8 @@ export default {
             loginFlag = true;
             if(username === "admin")
               adminFlag = true;
+            alert("Welcome to NPUSEC, " + username);
+            window.location.href = "/"
           })
           .catch(error => {
             console.error(error);

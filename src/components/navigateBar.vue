@@ -1,12 +1,7 @@
 <script setup>
-let loginFlag = false;
+let loginFlag = true;
 const username = "admin";
-const adminFlag = true;
-function search()
-{
-  const keyword = document.getElementById("searchBox").value;
-  alert("正在搜索：" + keyword)
-}
+const adminFlag = false;
 
 function logOut()
 {
@@ -83,7 +78,7 @@ function logOut()
             </ul>
           </li>
           <li class="menu-item"><a href="blog.html">Blogs</a></li>
-          <li v-if="loginFlag === true" class="menu-item"><a href="blog.html">个人中心</a></li>
+          <li v-if="loginFlag === true && adminFlag === false" class="menu-item"><a href="blog.html">个人中心</a></li>
           <li v-if="loginFlag === true && adminFlag === true" class="menu-item"><a href="blog.html">网站管理</a></li>
         </ul>
       </div>

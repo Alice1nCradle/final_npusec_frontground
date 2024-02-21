@@ -14,21 +14,24 @@ const blog_data = ref(
     author: '陈十',
     title: '我们将走向何方',
     time: 20240207,
-    content: '',
+    content: 'test',
     group: 'Web组'
   }
 )
 
-function fetchBlogData()
+function fetchBlogContent()
 {
-  let author = ref();
-  let title = ref();
-  let time = ref();
-  let content = ref();
-  let group = ref();
-  axios.post("/api/blog_data", { author:author, title:title, time:time, content:content, group:group })
+  let content = ref('');
+  // const sqlQuery = 'SELECT content FROM blog_data'
+  axios.post("/api/blog_content",
+      { author:blog_data.value.author,
+    title:blog_data.value.title,
+    time:blog_data.value.time,
+    group:blog_data.value.group })
       .then(response => {
         console.log(response.data);
+        // let the backend show up the content
+        // content = 'SELECT content FROM blog_data'
       })
       .catch(error => {
         console.error(error);
@@ -115,7 +118,7 @@ function fetchBlogData()
 
                 <!-- Single Description -->
                 <div class="single_desc">
-                  <p>Test.</p>
+                  <p> fetchBlogContent.value.content </p>
                 </div>
                 <!-- !Single Description -->
 

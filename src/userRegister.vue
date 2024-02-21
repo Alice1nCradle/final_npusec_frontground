@@ -1,7 +1,6 @@
 <script>
 import TheFooter from "@/components/theFooter.vue";
 import {ref} from "vue";
-import NavigateBar from "@/components/navigateBar.vue";
 import axios from "axios";
 import ValidCode from "@/components/ValidCode.vue";
 
@@ -37,23 +36,20 @@ export default {
           window.location.href = "login.html";
         }
       }
-
-    }
+    },
+    createUser()
+    {
+      const {username, password_1, password_2} = this;
+      axios.post('/api/create_user', { username, password_1, password_2})
+          .then(response => {
+            console.log(response.data)
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    },
   },
-  createUser()
-  {
-    let username = ref();
-    let password_1 = ref();
-    let password_2 = ref();
-    axios.post('/api/create_user', { username: username, password_1: password_1, password_2: password_2 })
-        .then(response => {
-          console.log(response.data)
-        })
-        .catch(error => {
-          console.error(error);
-        });
-  },
-  components:{ValidCode, NavigateBar, TheFooter},
+  components:{ValidCode, TheFooter},
 
 }
 
@@ -65,7 +61,6 @@ export default {
 <template>
   <!-- Main -->
   <div class="NFTLeo_fn_main" data-footer-sticky="">
-    <navigate-bar></navigate-bar>
     <div class="NFTLeo_fn_pagetitle">
       <div class="bg_overlay">
         <div class="bg_image">
@@ -103,7 +98,7 @@ export default {
                   <valid-code></valid-code>
                   <div class="form-group">
                     <div class="forgot col-sm-offset-2 col-sm-10">
-                      <input type="submit" value="Register" @click.prevent="register">
+                      <input type="submit" value="Register" @click.prevent="createUser">
                       <!--<button type="submit" class="btn btn-success">登录</button>-->
                     </div>
                   </div>

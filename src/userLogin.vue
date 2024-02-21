@@ -1,11 +1,13 @@
 <script>
-import TheFooter from "@/components/theFooter.vue";
-import {ref} from "vue";
-import NavigateBar from "@/components/navigateBar.vue";
+import {ref, defineProps} from "vue";
 import axios from "axios";
 import ValidCode from "@/components/ValidCode.vue";
-
+import TheFooter from "@/components/theFooter.vue";
+defineProps(['loginFlag', 'username', 'adminFlag']);
+let loginFlag = false;
+let adminFlag = false;
 export default {
+  components: {TheFooter, ValidCode},
   data() {
     return {
       username: ref(''),
@@ -20,6 +22,7 @@ export default {
       {
         alert("Welcome to NPUSEC, " + username);
         window.location.href = 'index.html';
+        loginFlag = true;
       }
       else if(username.length === 0 || password.length === 0)
       {
@@ -29,20 +32,22 @@ export default {
       {
         alert("Invalid login request!");
       }
-    }
+    },
+    loginCheck()
+    {
+      const {username, password} = this;
+      axios.post('/api/login_check', { username, password })
+          .then(response => {
+            console.log(response.data)
+            loginFlag = true;
+            if(username === "admin")
+              adminFlag = true;
+          })
+          .catch(error => {
+            console.error(error);
+          });
+    },
   },
-  loginCheck()
-  {
-    axios.post('/api/login_check', { username: ref(), password: ref() })
-        .then(response => {
-          console.log(response.data)
-        })
-        .catch(error => {
-          console.error(error);
-        });
-  },
-  components:{ValidCode, NavigateBar, TheFooter},
-
 }
 
 
@@ -54,7 +59,6 @@ export default {
 <template>
   <!-- Main -->
   <div class="NFTLeo_fn_main" data-footer-sticky="">
-    <navigate-bar></navigate-bar>
     <div class="NFTLeo_fn_pagetitle">
       <div class="bg_overlay">
         <div class="bg_image">
@@ -85,7 +89,7 @@ export default {
                   <valid-code></valid-code>
                   <div class="form-group">
                     <div class="forgot col-sm-offset-2 col-sm-10">
-                      <input type="submit" value="Login" @click.prevent="login">
+                      <input type="submit" value="Login" @click.prevent="loginCheck">
                       <!--<button type="submit" class="btn btn-success">登录</button>-->
                     </div>
                   </div>

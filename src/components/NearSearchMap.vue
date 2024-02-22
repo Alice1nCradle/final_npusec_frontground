@@ -12,6 +12,32 @@ const searchNext = ref(
       title: '为美好的网络安全事业献上祝福！'
     }
 )
+function getNextBlog(id)
+{
+  let {blog_next} = this;
+  axios.get(`/api/get_blog?id=${id + 1}`)
+      .then(response => {
+        console.log(response.data);
+        blog_next = response.data.title;
+      })
+      .catch(error => {
+        console.error(error);
+      })
+
+}
+
+function getPreviewBlog(id)
+{
+  let {blog_preview} = this;
+  axios.get(`/api/get_blog?id=${id - 1}`)
+      .then(response => {
+        console.log(response.data);
+        blog_preview = response.data.title;
+      })
+      .catch(error => {
+        console.error(error);
+      })
+}
 /*
 axios: (
     {

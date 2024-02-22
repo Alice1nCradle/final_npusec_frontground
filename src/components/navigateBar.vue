@@ -1,11 +1,20 @@
 <script setup>
-let loginFlag = true;
+import loginFlag from "@/userLogin.vue";
+import userLogin from "@/userLogin.vue";
 const username = "admin";
-const adminFlag = false;
+let adminFlag = true;
 
 function logOut()
 {
   loginFlag = false;
+  adminFlag = false;
+  alert('登出成功!');
+  window.location.href = '/login';
+}
+
+function fetchLogin()
+{
+  loginFlag = userLogin.value.loginFlag;
 }
 
 </script>
@@ -83,7 +92,7 @@ function logOut()
         </ul>
       </div>
       <div class="nav_buttons">
-        <a v-if="loginFlag === true" @click="logOut" class="NFTLeo_fn_button">
+        <a v-if="loginFlag === true" @click.prevent="logOut" class="NFTLeo_fn_button">
           <span class="icon"><img src="../static/picture/discord.svg" alt="" class="fn__svg"></span>
           <span class="text">登出</span>
         </a>

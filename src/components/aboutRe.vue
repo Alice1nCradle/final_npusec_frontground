@@ -1,16 +1,7 @@
 <script setup>
 import NavigateBar from "@/components/navigateBar.vue";
-import Sidebar from "@/components/sidebar.vue";
-import BlogPost from "@/components/blogPost.vue";
-import {ref} from "vue";
 import TheFooter from "@/components/theFooter.vue";
-import MemberCard from "@/components/memberCardWeb.vue";
-import MemberCardPwn from "@/components/memberCardPwn.vue";
 import MemberCardRe from "@/components/memberCardRe.vue";
-
-function clickMember(link) {
-  window.href(link);
-}
 
 </script>
 

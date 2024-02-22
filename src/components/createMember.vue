@@ -4,7 +4,6 @@ import {ref} from "vue";
 const md = new MarkdownIt()
 const initialBlogForm = {
   name: "",
-  content:"",
   link:"",
   group:""
 };

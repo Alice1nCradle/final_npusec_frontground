@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from "vue";
-// import axios from "axios";
+import axios from "axios";
 
 const authorData = ref(
     {
@@ -8,16 +8,20 @@ const authorData = ref(
       slogan: '我所热爱的，便是我的生活。'
     }
 )
-/*
-axios: ({
-  data: {
-    author: '',
-    slogan: ''
-  },
-  methods: 'post',
-  url: '/api/getAuthorData'
-})
- */
+
+function getAuthor()
+{
+  let { author, slogan } = this;
+  axios.get(`/api/get_author?author=${author}`)
+      .then(response => {
+        console.log(response.data);
+        author = response.data.author;
+        slogan = response.data.slogan;
+      })
+      .catch(error => {
+        console.error(error);
+      })
+}
 </script>
 
 <template>
@@ -26,9 +30,9 @@ axios: ({
     <div class="info_img">
       <img src="/src/static/picture/61.jpg" alt="">
     </div>
-    <div class="info_desc">
-      <h3 class="fn_title">{{ authorData.author }}</h3>
-      <p class="fn_desc">{{ authorData.slogan }}</p>
+    <div class="info_desc" :content="getAuthor">
+      <h3 class="fn_title">{{ getAuthor.author }}</h3>
+      <p class="fn_desc">{{ getAuthor.slogan }}</p>
       <ul class="social">
         <li><a href="#"><i class="fn-icon-wechat"></i></a></li>
         <li><a href="#"><i class="fn-icon-github"></i></a></li>

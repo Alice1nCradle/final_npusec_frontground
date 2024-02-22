@@ -1,47 +1,51 @@
 <script setup>
 import {ref} from "vue";
+import axios from "axios";
 defineProps(['id', 'name', 'content', 'group', 'link'])
 defineEmits(['clickMember'])
 const webMembers = ref([
   {
     id : 1,
     name : "高思平",
-    content : "组长",
     group:　'Web',
-    link: "/web/sipinggao"
+    link: "/web/sipinggao",
   },
   {
     id : 2,
     name : "陈十",
-    content : "组员",
     group:　'Web',
     link: "/web/shichen"
   },
   {
     id : 3,
     name : "郑传礼",
-    content : "组员",
     group:　'Web',
     link: "/web/chuanlizheng"
   },
   {
     id : 4,
     name : "郑植",
-    content : "组员",
     group:　'Web',
     link: "/web/zhizheng"
   },
   {
     id : 5,
     name : "林明升",
-    content : "组员",
     group: 'Web',
     link: "/web/mingshenglin"
   }
 ])
-function clickMember(link)
+function getWebMember(id)
 {
-  window.href(link);
+  let { name } = this;
+  axios.get(`/api/get_user?group=web&id=${id}`)
+      .then(response => {
+        console.log(response.data);
+        name = response.data.name
+      })
+      .catch(error => {
+        console.error(error);
+      })
 }
 </script>
 
@@ -54,7 +58,6 @@ function clickMember(link)
         </div>
         <div class="title_holder">
           <h3 class="fn_title">{{ member.name }}</h3>
-          <p class="fn_desc">{{ member.content }}</p>
         </div>
       </div>
     </div>

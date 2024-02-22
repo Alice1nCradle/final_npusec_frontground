@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import {computed, ref} from "vue";
 // import axios from "axios";
 const commentMember = ref([
   {
@@ -21,7 +21,7 @@ const commentMember = ref([
     text: 'All of these bullshit are fake news.'
   }
 ])
-const commentNumber = commentMember.value.length
+let commentNumber = commentMember.value.length;
 /*
 axios: ({
   methods: 'post',

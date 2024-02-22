@@ -1,23 +1,15 @@
 <script>
-import {ref, defineProps} from "vue";
 import axios from "axios";
 import ValidCode from "@/components/ValidCode.vue";
 import TheFooter from "@/components/theFooter.vue";
-defineProps(['loginFlag', 'username', 'adminFlag']);
-let loginFlag = false;
-let adminFlag = false;
 export default {
   components: {TheFooter, ValidCode},
-  data() {
-    return {
-      username: ref(''),
-      password: ref(''),
-    }
-  },
   methods: {
     login()
     {
       const {username, password} = this;
+      let loginFlag = false;
+
       if(username === 'admin' && password === "123456")
       {
         alert("Welcome to NPUSEC, " + username);
@@ -35,6 +27,8 @@ export default {
     },
     loginCheck()
     {
+      let loginFlag = false;
+      let adminFlag = false;
       const {username, password} = this;
       axios.post('/api/login_check', { username, password })
           .then(response => {

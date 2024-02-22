@@ -1,45 +1,50 @@
 <script setup>
 import {ref} from "vue";
+import axios from "axios";
 defineProps(['id', 'name', 'content', 'group', 'link'])
 defineEmits(['clickMember'])
 const pwnMembers = ref([
   {
     id : 1,
     name : "陈驰",
-    content : "Test",
     group:　'Pwn',
     link: "/pwn/chichen"
   },
   {
     id : 2,
     name : "熊深平",
-    content : "test",
     group:　'Pwn',
     link: "/pwn/shenpingxiong"
   },
   {
     id : 3,
     name : "贺宇超",
-    content : "test",
     group:　'Pwn',
     link: "/pwn/yuchaohe"
   },
   {
     id : 4,
     name : "黄豆豆",
-    content : "test",
     group: 'Pwn',
     link: "/pwn/doudouhuang"
   }
 ])
-function clickMember(link)
+function getPwnMember(id)
 {
-  window.href(link);
+  let { name } = this;
+  axios.get(`/api/get_user?group=pwn&id=${id}`)
+      .then(response => {
+        console.log(response.data);
+        name = response.data.name
+      })
+      .catch(error => {
+        console.error(error);
+      })
 }
 </script>
 
 <template>
-  <li class="team_item" v-for="member in pwnMembers" :key="member.id">
+  <li class="team_item" v-for="member in pwnMembers" >
     <div class="t_item">
       <div class="person_info">
         <div class="img_holder">
@@ -47,7 +52,6 @@ function clickMember(link)
         </div>
         <div class="title_holder">
           <h3 class="fn_title">{{ member.name }}</h3>
-          <p class="fn_desc">{{ member.content }}</p>
         </div>
       </div>
     </div>

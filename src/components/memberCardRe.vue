@@ -1,27 +1,33 @@
 <script setup>
 import {ref} from "vue";
+import axios from "axios";
 defineProps(['id', 'name', 'content', 'group', 'link'])
-defineEmits(['clickMember'])
 const reMembers = ref([
   {
     id : 1,
     name : "戚乐怡",
-    content : "Test",
-    group:　'Re',
     link: "/re/leyiqi"
   },
   {
     id : 2,
     name : "鲁逸晴",
-    content : "test",
-    group:　'Re',
     link: "/re/yiqinglu"
   },
 ])
-function clickMember(link)
+
+function getReMember(id)
 {
-  window.href(link);
+  let { name } = this;
+  axios.get(`/api/get_user?group=re&id=${id}`)
+      .then(response => {
+        console.log(response.data);
+        name = response.data.name
+      })
+      .catch(error => {
+        console.error(error);
+      })
 }
+
 </script>
 
 <template>
@@ -33,7 +39,6 @@ function clickMember(link)
         </div>
         <div class="title_holder">
           <h3 class="fn_title">{{ member.name }}</h3>
-          <p class="fn_desc">{{ member.content }}</p>
         </div>
       </div>
     </div>

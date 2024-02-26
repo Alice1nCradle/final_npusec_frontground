@@ -1,6 +1,6 @@
-import './assets/main.css'
-import 'bootstrap-5.3.0-alpha1'
-import 'bootstrap-5.3.0-alpha1/dist/css/bootstrap.min.css'
+import './static/css/style.css'
+import './static/css/plugins.css'
+import './static/css/css2.css'
 import { createApp } from 'vue'
 import aboutPwn from "@/components/aboutPwn.vue";
 

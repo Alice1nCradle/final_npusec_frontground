@@ -5,12 +5,13 @@
 // import AboutMain from "@/components/aboutMain.vue";
 
 // const md = new MarkdownIt()
+const isLogin = 'true';
 import NavigateBar from "@/components/navigateBar.vue";
 import TheFooter from "@/components/theFooter.vue";
 </script>
 
 <template>
-  <div class="NFTLeo_fn_main" data-footer-sticky="">
+  <div class="NFTLeo_fn_main" data-footer-sticky="" v-if="isLogin === 'true'">
 
    <navigate-bar></navigate-bar>
 
@@ -79,7 +80,7 @@ import TheFooter from "@/components/theFooter.vue";
               </div>
 
               <div class="buttons">
-                <a href="Web.html" class="NFTLeo_fn_button">
+                <a href="web.html" class="NFTLeo_fn_button">
                   <span class="icon"><img src="./static/picture/github.svg" alt="" class="fn__svg"></span>
                   <span class="text">More</span>
                 </a>
@@ -108,7 +109,7 @@ import TheFooter from "@/components/theFooter.vue";
               </div>
 
               <div class="buttons">
-                <a href="Misc.html" class="NFTLeo_fn_button">
+                <a href="re.html" class="NFTLeo_fn_button">
                   <span class="icon"><img src="./static/picture/github.svg" alt="" class="fn__svg"></span>
                   <span class="text">More</span>
                 </a>
@@ -136,7 +137,7 @@ import TheFooter from "@/components/theFooter.vue";
               </div>
 
               <div class="buttons">
-                <a href="Pwn.html" class="NFTLeo_fn_button">
+                <a href="pwn.html" class="NFTLeo_fn_button">
                   <span class="icon"><img src="./static/picture/github.svg" alt="" class="fn__svg"></span>
                   <span class="text">More</span>
                 </a>
@@ -546,11 +547,11 @@ import TheFooter from "@/components/theFooter.vue";
                     <span>Feb 01, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Find modern art on NFT platform</a>
+                    <a href="single-blog.html">Find modern art on NFT platform</a>
                   </h3>
                   <p class="fn_desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -563,11 +564,11 @@ import TheFooter from "@/components/theFooter.vue";
                     <span>March 23, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Introducing NFT Security Group</a>
+                    <a href="single-blog.html">Introducing NFT Security Group</a>
                   </h3>
                   <p class="fn_desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>
@@ -580,11 +581,11 @@ import TheFooter from "@/components/theFooter.vue";
                     <span>April 13, 2023</span>
                   </p>
                   <h3 class="fn_title">
-                    <a href="blog-single.html">Trending NFTs: Herman Backle</a>
+                    <a href="single-blog.html">Trending NFTs: Herman Backle</a>
                   </h3>
                   <p class="fn_desc">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
                   <p class="fn_read">
-                    <a href="blog-single.html" class="NFTLeo_fn_button only_text">
+                    <a href="single-blog.html" class="NFTLeo_fn_button only_text">
                       <span class="text">Read More</span>
                     </a>
                   </p>

@@ -1,9 +1,22 @@
 <script setup>
-function search()
+import loginFlag from "@/userLogin.vue";
+import userLogin from "@/userLogin.vue";
+const username = "admin";
+let adminFlag = true;
+
+function logOut()
 {
-  const keyword = document.getElementById("searchBox").value;
-  alert("正在搜索：" + keyword)
+  loginFlag = false;
+  adminFlag = false;
+  alert('登出成功!');
+  window.location.href = '/login';
 }
+
+function fetchLogin()
+{
+  loginFlag = userLogin.value.loginFlag;
+}
+
 </script>
 
 <template>
@@ -74,16 +87,22 @@ function search()
             </ul>
           </li>
           <li class="menu-item"><a href="blog.html">Blogs</a></li>
+          <li v-if="loginFlag === true && adminFlag === false" class="menu-item"><a href="blog.html">个人中心</a></li>
+          <li v-if="loginFlag === true && adminFlag === true" class="menu-item"><a href="blog.html">网站管理</a></li>
         </ul>
       </div>
       <div class="nav_buttons">
-        <a href="/login" class="NFTLeo_fn_button">
+        <a v-if="loginFlag === true" @click.prevent="logOut" class="NFTLeo_fn_button">
+          <span class="icon"><img src="../static/picture/discord.svg" alt="" class="fn__svg"></span>
+          <span class="text">登出</span>
+        </a>
+        <a v-if="loginFlag === false" href="/login" class="NFTLeo_fn_button">
           <span class="icon"><img src="../static/picture/discord.svg" alt="" class="fn__svg"></span>
           <span class="text">登录</span>
         </a>
         <a href="/register" class="NFTLeo_fn_button">
           <span class="icon"><img src="../static/picture/discord.svg" alt="" class="fn__svg"></span>
-          <span class="text">重置</span>
+          <span class="text">注册</span>
         </a>
       </div>
     </div>
@@ -110,8 +129,9 @@ function search()
     <div class="container">
       <div class="header_in">
 
-        <div class="logo">
-          <a href=""><img src="../static/picture/logo.png" alt=""></a>
+        <div class="fn_title">
+          <p v-if="loginFlag === true" class="fn_desc fn_animated_text">Hello, {{ username }}</p>
+          <p v-if="loginFlag === false" class="fn_desc fn_animated_text">Hello, Visitor</p>
         </div>
 
         <div class="trigger">

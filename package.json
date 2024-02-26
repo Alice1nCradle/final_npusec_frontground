@@ -9,13 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.7",
     "bootstrap-admin": "^2.0.1",
     "element-plus": "^2.5.2",
     "highlight": "^0.2.4",
     "highlight.js": "^11.9.0",
     "markdown-it": "^14.0.0",
     "vue": "^3.3.11",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
